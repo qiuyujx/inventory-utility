@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D74B8E41D44687A0013A1B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B8E31D44687A0013A1B0 /* AppDelegate.swift */; };
+		4D74B8E61D44687A0013A1B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B8E51D44687A0013A1B0 /* ViewController.swift */; };
+		4D74B8E91D44687A0013A1B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D74B8E71D44687A0013A1B0 /* Main.storyboard */; };
+		4D74B8EC1D44687A0013A1B0 /* OrderBot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B8EA1D44687A0013A1B0 /* OrderBot.xcdatamodeld */; };
+		4D74B8EE1D44687A0013A1B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D74B8ED1D44687A0013A1B0 /* Assets.xcassets */; };
+		4D74B8F11D44687A0013A1B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D74B8EF1D44687A0013A1B0 /* LaunchScreen.storyboard */; };
+		4D74B8FC1D44687A0013A1B0 /* OrderBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B8FB1D44687A0013A1B0 /* OrderBotTests.swift */; };
+		4D74B9071D44687A0013A1B0 /* OrderBotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B9061D44687A0013A1B0 /* OrderBotUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D74B8F81D44687A0013A1B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D74B8D81D44687A0013A1B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D74B8DF1D44687A0013A1B0;
+			remoteInfo = OrderBot;
+		};
+		4D74B9031D44687A0013A1B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D74B8D81D44687A0013A1B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D74B8DF1D44687A0013A1B0;
+			remoteInfo = OrderBot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4D74B8E01D44687A0013A1B0 /* OrderBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D74B8E31D44687A0013A1B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D74B8E51D44687A0013A1B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4D74B8E81D44687A0013A1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D74B8EB1D44687A0013A1B0 /* OrderBot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OrderBot.xcdatamodel; sourceTree = "<group>"; };
+		4D74B8ED1D44687A0013A1B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D74B8F01D44687A0013A1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D74B8F21D44687A0013A1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D74B8F71D44687A0013A1B0 /* OrderBotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D74B8FB1D44687A0013A1B0 /* OrderBotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBotTests.swift; sourceTree = "<group>"; };
+		4D74B8FD1D44687A0013A1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D74B9021D44687A0013A1B0 /* OrderBotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderBotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D74B9061D44687A0013A1B0 /* OrderBotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBotUITests.swift; sourceTree = "<group>"; };
+		4D74B9081D44687A0013A1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D74B8DD1D44687A0013A1B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D74B8F41D44687A0013A1B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D74B8FF1D44687A0013A1B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D74B8D71D44687A0013A1B0 = {
+			isa = PBXGroup;
+			children = (
+				4D74B8E21D44687A0013A1B0 /* OrderBot */,
+				4D74B8FA1D44687A0013A1B0 /* OrderBotTests */,
+				4D74B9051D44687A0013A1B0 /* OrderBotUITests */,
+				4D74B8E11D44687A0013A1B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D74B8E11D44687A0013A1B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D74B8E01D44687A0013A1B0 /* OrderBot.app */,
+				4D74B8F71D44687A0013A1B0 /* OrderBotTests.xctest */,
+				4D74B9021D44687A0013A1B0 /* OrderBotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D74B8E21D44687A0013A1B0 /* OrderBot */ = {
+			isa = PBXGroup;
+			children = (
+				4D74B8E31D44687A0013A1B0 /* AppDelegate.swift */,
+				4D74B8E51D44687A0013A1B0 /* ViewController.swift */,
+				4D74B8E71D44687A0013A1B0 /* Main.storyboard */,
+				4D74B8ED1D44687A0013A1B0 /* Assets.xcassets */,
+				4D74B8EF1D44687A0013A1B0 /* LaunchScreen.storyboard */,
+				4D74B8F21D44687A0013A1B0 /* Info.plist */,
+				4D74B8EA1D44687A0013A1B0 /* OrderBot.xcdatamodeld */,
+			);
+			path = OrderBot;
+			sourceTree = "<group>";
+		};
+		4D74B8FA1D44687A0013A1B0 /* OrderBotTests */ = {
+			isa = PBXGroup;
+			children = (
+				4D74B8FB1D44687A0013A1B0 /* OrderBotTests.swift */,
+				4D74B8FD1D44687A0013A1B0 /* Info.plist */,
+			);
+			path = OrderBotTests;
+			sourceTree = "<group>";
+		};
+		4D74B9051D44687A0013A1B0 /* OrderBotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4D74B9061D44687A0013A1B0 /* OrderBotUITests.swift */,
+				4D74B9081D44687A0013A1B0 /* Info.plist */,
+			);
+			path = OrderBotUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D74B8DF1D44687A0013A1B0 /* OrderBot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D74B90B1D44687A0013A1B0 /* Build configuration list for PBXNativeTarget "OrderBot" */;
+			buildPhases = (
+				4D74B8DC1D44687A0013A1B0 /* Sources */,
+				4D74B8DD1D44687A0013A1B0 /* Frameworks */,
+				4D74B8DE1D44687A0013A1B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrderBot;
+			productName = OrderBot;
+			productReference = 4D74B8E01D44687A0013A1B0 /* OrderBot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4D74B8F61D44687A0013A1B0 /* OrderBotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D74B90E1D44687A0013A1B0 /* Build configuration list for PBXNativeTarget "OrderBotTests" */;
+			buildPhases = (
+				4D74B8F31D44687A0013A1B0 /* Sources */,
+				4D74B8F41D44687A0013A1B0 /* Frameworks */,
+				4D74B8F51D44687A0013A1B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D74B8F91D44687A0013A1B0 /* PBXTargetDependency */,
+			);
+			name = OrderBotTests;
+			productName = OrderBotTests;
+			productReference = 4D74B8F71D44687A0013A1B0 /* OrderBotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4D74B9011D44687A0013A1B0 /* OrderBotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D74B9111D44687A0013A1B0 /* Build configuration list for PBXNativeTarget "OrderBotUITests" */;
+			buildPhases = (
+				4D74B8FE1D44687A0013A1B0 /* Sources */,
+				4D74B8FF1D44687A0013A1B0 /* Frameworks */,
+				4D74B9001D44687A0013A1B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D74B9041D44687A0013A1B0 /* PBXTargetDependency */,
+			);
+			name = OrderBotUITests;
+			productName = OrderBotUITests;
+			productReference = 4D74B9021D44687A0013A1B0 /* OrderBotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D74B8D81D44687A0013A1B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Christopher Tao";
+				TargetAttributes = {
+					4D74B8DF1D44687A0013A1B0 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					4D74B8F61D44687A0013A1B0 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 4D74B8DF1D44687A0013A1B0;
+					};
+					4D74B9011D44687A0013A1B0 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 4D74B8DF1D44687A0013A1B0;
+					};
+				};
+			};
+			buildConfigurationList = 4D74B8DB1D44687A0013A1B0 /* Build configuration list for PBXProject "OrderBot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D74B8D71D44687A0013A1B0;
+			productRefGroup = 4D74B8E11D44687A0013A1B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D74B8DF1D44687A0013A1B0 /* OrderBot */,
+				4D74B8F61D44687A0013A1B0 /* OrderBotTests */,
+				4D74B9011D44687A0013A1B0 /* OrderBotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D74B8DE1D44687A0013A1B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D74B8F11D44687A0013A1B0 /* LaunchScreen.storyboard in Resources */,
+				4D74B8EE1D44687A0013A1B0 /* Assets.xcassets in Resources */,
+				4D74B8E91D44687A0013A1B0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D74B8F51D44687A0013A1B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D74B9001D44687A0013A1B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D74B8DC1D44687A0013A1B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D74B8E61D44687A0013A1B0 /* ViewController.swift in Sources */,
+				4D74B8EC1D44687A0013A1B0 /* OrderBot.xcdatamodeld in Sources */,
+				4D74B8E41D44687A0013A1B0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D74B8F31D44687A0013A1B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D74B8FC1D44687A0013A1B0 /* OrderBotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D74B8FE1D44687A0013A1B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D74B9071D44687A0013A1B0 /* OrderBotUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D74B8F91D44687A0013A1B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D74B8DF1D44687A0013A1B0 /* OrderBot */;
+			targetProxy = 4D74B8F81D44687A0013A1B0 /* PBXContainerItemProxy */;
+		};
+		4D74B9041D44687A0013A1B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D74B8DF1D44687A0013A1B0 /* OrderBot */;
+			targetProxy = 4D74B9031D44687A0013A1B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4D74B8E71D44687A0013A1B0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D74B8E81D44687A0013A1B0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4D74B8EF1D44687A0013A1B0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D74B8F01D44687A0013A1B0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D74B9091D44687A0013A1B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4D74B90A1D44687A0013A1B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D74B90C1D44687A0013A1B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OrderBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christopher.tao.OrderBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4D74B90D1D44687A0013A1B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OrderBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christopher.tao.OrderBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4D74B90F1D44687A0013A1B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OrderBotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christopher.tao.OrderBotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrderBot.app/OrderBot";
+			};
+			name = Debug;
+		};
+		4D74B9101D44687A0013A1B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OrderBotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christopher.tao.OrderBotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrderBot.app/OrderBot";
+			};
+			name = Release;
+		};
+		4D74B9121D44687A0013A1B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OrderBotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christopher.tao.OrderBotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OrderBot;
+			};
+			name = Debug;
+		};
+		4D74B9131D44687A0013A1B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OrderBotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.christopher.tao.OrderBotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OrderBot;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D74B8DB1D44687A0013A1B0 /* Build configuration list for PBXProject "OrderBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D74B9091D44687A0013A1B0 /* Debug */,
+				4D74B90A1D44687A0013A1B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D74B90B1D44687A0013A1B0 /* Build configuration list for PBXNativeTarget "OrderBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D74B90C1D44687A0013A1B0 /* Debug */,
+				4D74B90D1D44687A0013A1B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4D74B90E1D44687A0013A1B0 /* Build configuration list for PBXNativeTarget "OrderBotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D74B90F1D44687A0013A1B0 /* Debug */,
+				4D74B9101D44687A0013A1B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4D74B9111D44687A0013A1B0 /* Build configuration list for PBXNativeTarget "OrderBotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D74B9121D44687A0013A1B0 /* Debug */,
+				4D74B9131D44687A0013A1B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4D74B8EA1D44687A0013A1B0 /* OrderBot.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4D74B8EB1D44687A0013A1B0 /* OrderBot.xcdatamodel */,
+			);
+			currentVersion = 4D74B8EB1D44687A0013A1B0 /* OrderBot.xcdatamodel */;
+			path = OrderBot.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4D74B8D81D44687A0013A1B0 /* Project object */;
+}
