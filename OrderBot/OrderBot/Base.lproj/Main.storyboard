@@ -560,6 +560,7 @@
                 <tapGestureRecognizer id="vz2-Pv-sZz" userLabel="Product List Pressed">
                     <connections>
                         <action selector="productListPressed:" destination="0HP-br-IQT" id="XqO-4Y-eBM"/>
+                        <segue destination="KOJ-IX-bqJ" kind="show" id="9d8-j4-x3O"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="hr8-3S-uiJ" userLabel="Product Add Pressed">
@@ -600,8 +601,126 @@
             </objects>
             <point key="canvasLocation" x="1104" y="-263"/>
         </scene>
+        <!--Product List View Controller-->
+        <scene sceneID="1Yn-fe-dob">
+            <objects>
+                <tableViewController storyboardIdentifier="ProductListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KOJ-IX-bqJ" customClass="ProductListViewController" customModule="OrderBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fe6-TO-XdC">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.97254901959999995" green="0.95294117649999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="0bP-NQ-tAr">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="KOJ-IX-bqJ" id="eO2-Na-mHu"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductCell" id="jom-g7-6fQ" customClass="ProductTableViewCell" customModule="OrderBot" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jom-g7-6fQ" id="nN6-aE-pnB">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="akI-ky-NGl">
+                                            <rect key="frame" x="13" y="13" width="73.5" height="73.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="akI-ky-NGl" secondAttribute="height" multiplier="1:1" id="mQl-1X-BXs"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coke" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="olZ-sd-fKU">
+                                            <rect key="frame" x="94" y="13" width="450" height="29.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Drink &gt; COCA COLA 1.25 Liter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Mnw-Oj-58x">
+                                            <rect key="frame" x="94" y="42" width="450" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit: box" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="mug-hX-UZa">
+                                            <rect key="frame" x="94" y="57" width="449.5" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stock Level: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ske-iM-DwP">
+                                            <rect key="frame" x="94" y="71" width="449.5" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="akI-ky-NGl" firstAttribute="leading" secondItem="nN6-aE-pnB" secondAttribute="leadingMargin" constant="5" id="1J7-nA-cvx"/>
+                                        <constraint firstItem="mug-hX-UZa" firstAttribute="top" secondItem="Ske-iM-DwP" secondAttribute="bottom" id="5eo-xQ-M2a"/>
+                                        <constraint firstItem="mug-hX-UZa" firstAttribute="height" secondItem="akI-ky-NGl" secondAttribute="height" multiplier="0.2" id="AEW-6N-XCh"/>
+                                        <constraint firstItem="Ske-iM-DwP" firstAttribute="top" secondItem="mug-hX-UZa" secondAttribute="bottom" id="DFe-ec-D8Q"/>
+                                        <constraint firstItem="Ske-iM-DwP" firstAttribute="leading" secondItem="akI-ky-NGl" secondAttribute="trailing" constant="8" id="DFo-Pr-0aM"/>
+                                        <constraint firstItem="mug-hX-UZa" firstAttribute="top" secondItem="Mnw-Oj-58x" secondAttribute="bottom" id="Kr8-3e-mKe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="olZ-sd-fKU" secondAttribute="trailing" constant="15" id="MEL-rj-sHo"/>
+                                        <constraint firstItem="Mnw-Oj-58x" firstAttribute="height" secondItem="akI-ky-NGl" secondAttribute="height" multiplier="0.2" id="MgU-AJ-nZt"/>
+                                        <constraint firstItem="olZ-sd-fKU" firstAttribute="leading" secondItem="akI-ky-NGl" secondAttribute="trailing" constant="8" id="RVf-eP-Xm9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Mnw-Oj-58x" secondAttribute="trailing" constant="15" id="TzO-E5-MTk"/>
+                                        <constraint firstItem="mug-hX-UZa" firstAttribute="leading" secondItem="akI-ky-NGl" secondAttribute="trailing" constant="8" id="gnK-7p-8uI"/>
+                                        <constraint firstItem="akI-ky-NGl" firstAttribute="centerY" secondItem="nN6-aE-pnB" secondAttribute="centerY" id="jH3-W0-ky8"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ske-iM-DwP" secondAttribute="trailing" constant="15" id="moQ-Sy-o99"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mug-hX-UZa" secondAttribute="trailing" constant="15" id="pvX-ge-BZH"/>
+                                        <constraint firstItem="Ske-iM-DwP" firstAttribute="height" secondItem="akI-ky-NGl" secondAttribute="height" multiplier="0.2" id="q7b-vB-18N"/>
+                                        <constraint firstItem="olZ-sd-fKU" firstAttribute="top" secondItem="akI-ky-NGl" secondAttribute="top" id="qW5-mB-Uo6"/>
+                                        <constraint firstItem="Mnw-Oj-58x" firstAttribute="top" secondItem="olZ-sd-fKU" secondAttribute="bottom" id="s7J-Ma-REG"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="akI-ky-NGl" secondAttribute="bottom" constant="5" id="sp9-u0-Mf6"/>
+                                        <constraint firstItem="Mnw-Oj-58x" firstAttribute="leading" secondItem="akI-ky-NGl" secondAttribute="trailing" constant="8" id="tjQ-qG-NMJ"/>
+                                        <constraint firstItem="olZ-sd-fKU" firstAttribute="height" secondItem="akI-ky-NGl" secondAttribute="height" multiplier="0.4" id="vIw-Cx-arf"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="5eo-xQ-M2a"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ProductCategoryLabel" destination="Mnw-Oj-58x" id="J9m-zI-m90"/>
+                                    <outlet property="imageView" destination="akI-ky-NGl" id="8jr-Rb-z0p"/>
+                                    <outlet property="productImageView" destination="akI-ky-NGl" id="BdX-1O-TQZ"/>
+                                    <outlet property="productNameLabel" destination="olZ-sd-fKU" id="pMt-qm-jqH"/>
+                                    <outlet property="productStockLevelLabel" destination="Ske-iM-DwP" id="Nth-UJ-WGJ"/>
+                                    <outlet property="productUnitLabel" destination="mug-hX-UZa" id="qsn-JT-CA6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KOJ-IX-bqJ" id="Vlx-69-9AH"/>
+                            <outlet property="delegate" destination="KOJ-IX-bqJ" id="3GV-wN-dzx"/>
+                        </connections>
+                    </tableView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="6Sh-Qw-0DR" id="xIG-cy-aQ6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gHE-pt-KYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="6Sh-Qw-0DR">
+                    <connections>
+                        <outlet property="delegate" destination="KOJ-IX-bqJ" id="g2D-eI-d0W"/>
+                        <outlet property="searchBar" destination="0bP-NQ-tAr" id="pBh-pr-JWm"/>
+                        <outlet property="searchContentsController" destination="KOJ-IX-bqJ" id="oCe-Pn-SV5"/>
+                        <outlet property="searchResultsDataSource" destination="KOJ-IX-bqJ" id="2qt-r1-gnG"/>
+                        <outlet property="searchResultsDelegate" destination="KOJ-IX-bqJ" id="aRU-cI-SnW"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1931" y="-263"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="DefaultImage" width="110" height="110"/>
         <image name="NewOrderIcon" width="110" height="110"/>
         <image name="OrderIcon" width="110" height="110"/>
         <image name="ProductIcon" width="110" height="110"/>

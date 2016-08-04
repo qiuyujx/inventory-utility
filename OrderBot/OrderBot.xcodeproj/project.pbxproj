@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D4A240C1D52D5FD00096376 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4A240B1D52D5FD00096376 /* ProductTableViewCell.swift */; };
+		4D4A240F1D52D99000096376 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4A240E1D52D99000096376 /* Product.swift */; };
+		4D4A24121D52DA0F00096376 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4A24111D52DA0F00096376 /* ProductListViewController.swift */; };
 		4D74B8E41D44687A0013A1B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B8E31D44687A0013A1B0 /* AppDelegate.swift */; };
 		4D74B8E91D44687A0013A1B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D74B8E71D44687A0013A1B0 /* Main.storyboard */; };
 		4D74B8EC1D44687A0013A1B0 /* OrderBot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B8EA1D44687A0013A1B0 /* OrderBot.xcdatamodeld */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D4A240B1D52D5FD00096376 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		4D4A240E1D52D99000096376 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		4D4A24111D52DA0F00096376 /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		4D74B8E01D44687A0013A1B0 /* OrderBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D74B8E31D44687A0013A1B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D74B8E81D44687A0013A1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +84,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D4A24081D52D07B00096376 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4D74B9161D446EBC0013A1B0 /* HomeViewController.swift */,
+				4D4A24111D52DA0F00096376 /* ProductListViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4D4A240D1D52D60400096376 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D4A240B1D52D5FD00096376 /* ProductTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4D4A24101D52D99400096376 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D4A240E1D52D99000096376 /* Product.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		4D74B8D71D44687A0013A1B0 = {
 			isa = PBXGroup;
 			children = (
@@ -102,8 +133,10 @@
 			isa = PBXGroup;
 			children = (
 				4D74B8E31D44687A0013A1B0 /* AppDelegate.swift */,
-				4D74B9161D446EBC0013A1B0 /* HomeViewController.swift */,
 				4D74B8E71D44687A0013A1B0 /* Main.storyboard */,
+				4D4A24101D52D99400096376 /* Models */,
+				4D4A240D1D52D60400096376 /* Views */,
+				4D4A24081D52D07B00096376 /* Controllers */,
 				4D74B8ED1D44687A0013A1B0 /* Assets.xcassets */,
 				4D74B8EF1D44687A0013A1B0 /* LaunchScreen.storyboard */,
 				4D74B8F21D44687A0013A1B0 /* Info.plist */,
@@ -264,8 +297,11 @@
 			files = (
 				4D74B8EC1D44687A0013A1B0 /* OrderBot.xcdatamodeld in Sources */,
 				4D74B9151D446CC90013A1B0 /* UtilityHub.swift in Sources */,
+				4D4A24121D52DA0F00096376 /* ProductListViewController.swift in Sources */,
 				4D74B8E41D44687A0013A1B0 /* AppDelegate.swift in Sources */,
 				4D74B9171D446EBC0013A1B0 /* HomeViewController.swift in Sources */,
+				4D4A240C1D52D5FD00096376 /* ProductTableViewCell.swift in Sources */,
+				4D4A240F1D52D99000096376 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +528,7 @@
 				4D74B90D1D44687A0013A1B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D74B90E1D44687A0013A1B0 /* Build configuration list for PBXNativeTarget "OrderBotTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +537,7 @@
 				4D74B9101D44687A0013A1B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D74B9111D44687A0013A1B0 /* Build configuration list for PBXNativeTarget "OrderBotUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +546,7 @@
 				4D74B9131D44687A0013A1B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
