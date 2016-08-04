@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4D74B8E41D44687A0013A1B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B8E31D44687A0013A1B0 /* AppDelegate.swift */; };
-		4D74B8E61D44687A0013A1B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B8E51D44687A0013A1B0 /* ViewController.swift */; };
 		4D74B8E91D44687A0013A1B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D74B8E71D44687A0013A1B0 /* Main.storyboard */; };
 		4D74B8EC1D44687A0013A1B0 /* OrderBot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B8EA1D44687A0013A1B0 /* OrderBot.xcdatamodeld */; };
 		4D74B8EE1D44687A0013A1B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D74B8ED1D44687A0013A1B0 /* Assets.xcassets */; };
 		4D74B8F11D44687A0013A1B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D74B8EF1D44687A0013A1B0 /* LaunchScreen.storyboard */; };
 		4D74B8FC1D44687A0013A1B0 /* OrderBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B8FB1D44687A0013A1B0 /* OrderBotTests.swift */; };
 		4D74B9071D44687A0013A1B0 /* OrderBotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B9061D44687A0013A1B0 /* OrderBotUITests.swift */; };
+		4D74B9151D446CC90013A1B0 /* UtilityHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B9141D446CC90013A1B0 /* UtilityHub.swift */; };
+		4D74B9171D446EBC0013A1B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D74B9161D446EBC0013A1B0 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,6 @@
 /* Begin PBXFileReference section */
 		4D74B8E01D44687A0013A1B0 /* OrderBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D74B8E31D44687A0013A1B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D74B8E51D44687A0013A1B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D74B8E81D44687A0013A1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D74B8EB1D44687A0013A1B0 /* OrderBot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OrderBot.xcdatamodel; sourceTree = "<group>"; };
 		4D74B8ED1D44687A0013A1B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		4D74B9021D44687A0013A1B0 /* OrderBotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderBotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D74B9061D44687A0013A1B0 /* OrderBotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBotUITests.swift; sourceTree = "<group>"; };
 		4D74B9081D44687A0013A1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D74B9141D446CC90013A1B0 /* UtilityHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityHub.swift; sourceTree = "<group>"; };
+		4D74B9161D446EBC0013A1B0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				4D74B8E31D44687A0013A1B0 /* AppDelegate.swift */,
-				4D74B8E51D44687A0013A1B0 /* ViewController.swift */,
+				4D74B9161D446EBC0013A1B0 /* HomeViewController.swift */,
 				4D74B8E71D44687A0013A1B0 /* Main.storyboard */,
 				4D74B8ED1D44687A0013A1B0 /* Assets.xcassets */,
 				4D74B8EF1D44687A0013A1B0 /* LaunchScreen.storyboard */,
 				4D74B8F21D44687A0013A1B0 /* Info.plist */,
 				4D74B8EA1D44687A0013A1B0 /* OrderBot.xcdatamodeld */,
+				4D74B9141D446CC90013A1B0 /* UtilityHub.swift */,
 			);
 			path = OrderBot;
 			sourceTree = "<group>";
@@ -259,9 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D74B8E61D44687A0013A1B0 /* ViewController.swift in Sources */,
 				4D74B8EC1D44687A0013A1B0 /* OrderBot.xcdatamodeld in Sources */,
+				4D74B9151D446CC90013A1B0 /* UtilityHub.swift in Sources */,
 				4D74B8E41D44687A0013A1B0 /* AppDelegate.swift in Sources */,
+				4D74B9171D446EBC0013A1B0 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
