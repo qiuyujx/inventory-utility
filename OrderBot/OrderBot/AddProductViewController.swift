@@ -26,6 +26,9 @@ class AddProductViewController: UITableViewController {
         // Initialise product
         if product == nil {
             product = Product()
+            self.title = "Add Product"
+        }else{
+            self.title = "Edit Product"
         }
     }
 
@@ -110,7 +113,8 @@ class AddProductViewController: UITableViewController {
     }
     */
     
-    // MARK: - Button Methods
+    // MARK: - Product properties methods
+    
     @IBAction func barcodeButtonPressed(sender: UIButton) {
         
     }

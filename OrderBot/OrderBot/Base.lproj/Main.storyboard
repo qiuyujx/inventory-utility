@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="389" y="-263"/>
         </scene>
-        <!--Search Bar Here-->
+        <!--Home-->
         <scene sceneID="ePz-HT-Hay">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0HP-br-IQT" customClass="HomeViewController" customModule="OrderBot" customModuleProvider="target" sceneMemberID="viewController">
@@ -553,7 +553,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Bar Here" id="Vcu-th-KIY"/>
+                    <navigationItem key="navigationItem" title="Home" id="Vcu-th-KIY"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjW-By-zNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
