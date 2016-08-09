@@ -55,15 +55,15 @@ class AddProductViewController: UITableViewController {
         }
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    // MARK: - Table view delegate
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0.1 // no header view for "product name" section
+        }else {
+            return super.tableView(tableView, heightForHeaderInSection: section)
+        }
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
