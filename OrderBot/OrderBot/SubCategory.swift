@@ -1,5 +1,5 @@
 //
-//  Product.swift
+//  SubCategory.swift
 //  OrderBot
 //
 //  Created by Christopher Tao on 5/08/2016.
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Product: Object {
+class SubCategory: Object {
     
 // Specify properties to ignore (Realm won't persist these)
     
@@ -18,16 +18,8 @@ class Product: Object {
 //  }
     
     dynamic var id: String = ""
-    dynamic var name: String = ""
-    dynamic var unit: Unit?
-    
-    dynamic var category: Category?
-    dynamic var subCategory: SubCategory?
-    
-    dynamic var decimalEnabled: Bool = false
-    dynamic var barcode: String?
-    let price = RealmOptional<Float>()
-    dynamic var comment: String?
+    let superCategory = LinkingObjects(fromType: Category.self, property: "subCategories")
+    dynamic var desc: String = ""
     
     override static func primaryKey() -> String? {
         return "id"
