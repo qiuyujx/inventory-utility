@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddProductViewController: UITableViewController {
+class AddProductViewController: UITableViewController, ChooseUnitProtocol {
     
     @IBOutlet weak var productNameTextField: UITextField!
     @IBOutlet weak var productCategoryLabel: UILabel!
@@ -103,21 +103,29 @@ class AddProductViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destinationViewController = segue.destinationViewController
+        
+        // Choose Unit
+        if destinationViewController.isKindOfClass(UnitListViewController) {
+            (destinationViewController as! UnitListViewController).delegate = self
+        }
     }
-    */
+    
     
     // MARK: - Product properties methods
-    
     @IBAction func barcodeButtonPressed(sender: UIButton) {
         
     }
     
+    // MARK: - Choose Protocols
+    func didChooseUnitWithUnit(unit: Unit) {
+        self.product?.unit = unit
+        self.productUnitLabel.text = unit.desc
+        self.productUnitLabel.textColor = UIColor.blackColor()
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
 }

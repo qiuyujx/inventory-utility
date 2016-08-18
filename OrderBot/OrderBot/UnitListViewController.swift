@@ -11,6 +11,7 @@ import UIKit
 class UnitListViewController: UITableViewController {
     
     var unitList: [Unit] = Unit.getAll()
+    var delegate: ChooseUnitProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +28,10 @@ class UnitListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return unitList.count
     }
 
@@ -42,15 +41,10 @@ class UnitListViewController: UITableViewController {
         return cell
     }
 
-    
-    // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
-
-    
-    // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
@@ -63,6 +57,14 @@ class UnitListViewController: UITableViewController {
                 alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
+        }
+    }
+    
+    // MARK: - Table view delegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedUnit = unitList[indexPath.row]
+        if delegate != nil {
+            delegate?.didChooseUnitWithUnit(selectedUnit)
         }
     }
   
