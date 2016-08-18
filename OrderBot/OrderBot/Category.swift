@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Category: Object {
+class Category: DataObject {
     
 // Specify properties to ignore (Realm won't persist these)
     
@@ -17,11 +17,27 @@ class Category: Object {
 //    return []
 //  }
     
-    dynamic var id: String = ""
     dynamic var desc: String = ""
     let subCategories = List<SubCategory>()
     
     override static func primaryKey() -> String? {
         return "id"
+    }
+    
+    static func addNewCategory(unitDesc: String) -> Bool {
+        do {
+            let realm = try Realm()
+            let newUnit = Unit(value: [NSUUID().UUIDString, unitDesc])
+            if realm.objects(Unit.self).filter("desc = '\(unitDesc)'").count > 0 {
+                return false
+            }
+            try realm.write({
+                realm.add(newUnit)
+            })
+        }catch {
+            print(error)
+            return false
+        }
+        return true
     }
 }

@@ -695,6 +695,9 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="iTE-uZ-LMV" secondAttribute="trailing" constant="40" id="W0k-RE-Sgu"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="eDw-MT-gip" kind="show" id="3pz-qv-5qt"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="Yz4-VN-7us">
                                         <rect key="frame" x="0.0" y="273" width="600" height="44"/>
@@ -886,6 +889,72 @@
             </objects>
             <point key="canvasLocation" x="1932" y="-1045"/>
         </scene>
+        <!--Category-->
+        <scene sceneID="HJf-B0-DIy">
+            <objects>
+                <tableViewController storyboardIdentifier="CategoryListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eDw-MT-gip" customClass="CategoryListViewController" customModule="OrderBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZMe-p4-W2v">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CategoryTableViewCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="CategoryCell" id="Mip-QV-rZa" customClass="CategoryTableViewCell" customModule="OrderBot" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mip-QV-rZa" id="ten-EL-QjN">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio" translatesAutoresizingMaskIntoConstraints="NO" id="it9-JQ-mVb">
+                                            <rect key="frame" x="10" y="10" width="23.5" height="23.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="it9-JQ-mVb" secondAttribute="height" multiplier="1:1" id="Z0x-Qj-5q2"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="cu6-Tp-35z">
+                                            <rect key="frame" x="53.5" y="10" width="498.5" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="it9-JQ-mVb" firstAttribute="top" secondItem="ten-EL-QjN" secondAttribute="topMargin" constant="2" id="0ye-w1-O5J"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="it9-JQ-mVb" secondAttribute="bottom" constant="2" id="HRR-Br-KHx"/>
+                                        <constraint firstItem="it9-JQ-mVb" firstAttribute="leading" secondItem="ten-EL-QjN" secondAttribute="leading" constant="10" id="JjY-pS-Zvx"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cu6-Tp-35z" secondAttribute="bottom" constant="2" id="LOT-2G-ODI"/>
+                                        <constraint firstItem="cu6-Tp-35z" firstAttribute="leading" secondItem="it9-JQ-mVb" secondAttribute="trailing" constant="20" id="RUH-Jv-cpj"/>
+                                        <constraint firstItem="cu6-Tp-35z" firstAttribute="top" secondItem="ten-EL-QjN" secondAttribute="topMargin" constant="2" id="YSV-As-HEL"/>
+                                        <constraint firstItem="cu6-Tp-35z" firstAttribute="centerY" secondItem="ten-EL-QjN" secondAttribute="centerY" id="ouj-6j-efJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cu6-Tp-35z" secondAttribute="trailing" constant="40" id="qNd-z0-937"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryLabel" destination="cu6-Tp-35z" id="C3H-Uu-7gZ"/>
+                                    <outlet property="radioImageView" destination="it9-JQ-mVb" id="chH-Ke-xGD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eDw-MT-gip" id="MJq-R5-IZ2"/>
+                            <outlet property="delegate" destination="eDw-MT-gip" id="XD2-0b-nwo"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Category" id="Jss-kd-Bu6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="u6K-ta-qdX">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="eDw-MT-gip" id="0Je-Ck-xnc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="im1-mK-hvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2651" y="-1722"/>
+        </scene>
         <!--Unit-->
         <scene sceneID="NE4-xB-C4W">
             <objects>
@@ -1050,5 +1119,6 @@
         <image name="SupplierIcon" width="110" height="110"/>
         <image name="barcodeIcon" width="60" height="48"/>
         <image name="plusButton" width="51" height="51"/>
+        <image name="radio" width="45" height="45"/>
     </resources>
 </document>

@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Product: Object {
+class Product: DataObject {
     
 // Specify properties to ignore (Realm won't persist these)
     
@@ -17,7 +17,6 @@ class Product: Object {
 //    return []
 //  }
     
-    dynamic var id: String = ""
     dynamic var name: String = ""
     dynamic var unit: Unit?
     

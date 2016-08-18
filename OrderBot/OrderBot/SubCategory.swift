@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class SubCategory: Object {
+class SubCategory: DataObject {
     
 // Specify properties to ignore (Realm won't persist these)
     
@@ -17,7 +17,6 @@ class SubCategory: Object {
 //    return []
 //  }
     
-    dynamic var id: String = ""
     let superCategory = LinkingObjects(fromType: Category.self, property: "subCategories")
     dynamic var desc: String = ""
     
