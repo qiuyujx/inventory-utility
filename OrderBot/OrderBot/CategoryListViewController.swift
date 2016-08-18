@@ -31,59 +31,51 @@ class CategoryListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return categoryList.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell: CategoryTableViewCell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath) as! CategoryTableViewCell
+        let category = categoryList[indexPath.row]
+        cell.categoryLabel.text = category.desc
+        if category == categorySelected {
+            cell.radioImageView.image = UIImage(named: "radioSelected")
+        }else{
+            cell.radioImageView.image = UIImage(named: "radio")
+        }
 
         return cell
     }
-    */
 
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            if Category.deleteSelf(categoryList[indexPath.row]) {
+                categoryList = Category.getAll()
+                // Delete the row from table view
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }else {
+                let alert = UIAlertController(title: "Error", message: "Failed to delete, please try again", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    // MARK: - Table view delegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.categorySelected = categoryList[indexPath.row]
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation
@@ -97,8 +89,21 @@ class CategoryListViewController: UITableViewController {
     
     // MARK: - Button Methods
     @IBAction func addButtonPressed(sender: UIBarButtonItem) {
-        
+        let alert = UIAlertController(title: "Enter New Category", message: nil, preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler { (textField) in
+            textField.keyboardType = .Default
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (_) in
+            if let categoryDesc = alert.textFields?[0].text {
+                if !Category.addNewCategory(categoryDesc) {
+                    alert.message = "Please enter a valid Category"
+                }else {
+                    self.categoryList = Category.getAll()
+                    self.tableView.reloadData()
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
-    
-
 }

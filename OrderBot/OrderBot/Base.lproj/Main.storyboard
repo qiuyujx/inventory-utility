@@ -944,7 +944,7 @@
                     <navigationItem key="navigationItem" title="Category" id="Jss-kd-Bu6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="u6K-ta-qdX">
                             <connections>
-                                <action selector="addButtonPressed:" destination="eDw-MT-gip" id="0Je-Ck-xnc"/>
+                                <action selector="addButtonPressed:" destination="eDw-MT-gip" id="eOu-zF-I5c"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

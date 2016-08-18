@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Unit: DataObject {
+class Unit: Object {
     
 // Specify properties to ignore (Realm won't persist these)
     
@@ -17,10 +17,22 @@ class Unit: DataObject {
 //    return []
 //  }
     
+    dynamic var id: String = ""
     dynamic var desc: String = ""
     
     override static func primaryKey() -> String? {
         return "id"
+    }
+    
+    static func getAll() -> [Unit]! {
+        do {
+            let realm = try Realm()
+            let unitList = realm.objects(Unit).toArray()
+            return unitList
+        }catch {
+            print(error)
+        }
+        return [Unit]()
     }
     
     static func addNewUnit(unitDesc: String) -> Bool {
@@ -40,4 +52,16 @@ class Unit: DataObject {
         return true
     }
     
+    static func deleteSelf(unit: Unit) -> Bool {
+        do {
+            let realm = try Realm()
+            try realm.write{
+                realm.delete(unit)
+            }
+        }catch {
+            print(error)
+            return false
+        }
+        return true
+    }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Category: DataObject {
+class Category: Object {
     
 // Specify properties to ignore (Realm won't persist these)
     
@@ -17,6 +17,7 @@ class Category: DataObject {
 //    return []
 //  }
     
+    dynamic var id: String = ""
     dynamic var desc: String = ""
     let subCategories = List<SubCategory>()
     
@@ -24,16 +25,40 @@ class Category: DataObject {
         return "id"
     }
     
-    static func addNewCategory(unitDesc: String) -> Bool {
+    static func getAll() -> [Category]! {
         do {
             let realm = try Realm()
-            let newUnit = Unit(value: [NSUUID().UUIDString, unitDesc])
-            if realm.objects(Unit.self).filter("desc = '\(unitDesc)'").count > 0 {
+            let categoryList = realm.objects(Category).toArray()
+            return categoryList
+        }catch {
+            print(error)
+        }
+        return [Category]()
+    }
+    
+    static func addNewCategory(categoryDesc: String) -> Bool {
+        do {
+            let realm = try Realm()
+            let newCategory = Category(value: [NSUUID().UUIDString, categoryDesc, [SubCategory]()])
+            if realm.objects(Category.self).filter("desc = '\(categoryDesc)'").count > 0 {
                 return false
             }
             try realm.write({
-                realm.add(newUnit)
+                realm.add(newCategory)
             })
+        }catch {
+            print(error)
+            return false
+        }
+        return true
+    }
+    
+    static func deleteSelf(category: Category) -> Bool {
+        do {
+            let realm = try Realm()
+            try realm.write{
+                realm.delete(category)
+            }
         }catch {
             print(error)
             return false
