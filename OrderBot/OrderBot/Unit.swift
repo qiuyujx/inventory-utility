@@ -51,4 +51,17 @@ class Unit: Object {
         }
         return true
     }
+    
+    static func deleteSelf(unit: Unit) -> Bool {
+        do {
+            let realm = try Realm()
+            try realm.write{
+                realm.delete(unit)
+            }
+        }catch {
+            print(error)
+            return false
+        }
+        return true
+    }
 }
