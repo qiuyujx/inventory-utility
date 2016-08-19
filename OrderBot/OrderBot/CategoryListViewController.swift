@@ -42,7 +42,7 @@ class CategoryListViewController: UITableViewController {
         let cell: CategoryTableViewCell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath) as! CategoryTableViewCell
         let category = categoryList[indexPath.row]
         cell.categoryLabel.text = category.desc
-        if category == categorySelected {
+        if category.id == categorySelected?.id {
             cell.radioImageView.image = UIImage(named: "radioSelected")
         }else{
             cell.radioImageView.image = UIImage(named: "radio")
@@ -89,21 +89,35 @@ class CategoryListViewController: UITableViewController {
     
     // MARK: - Button Methods
     @IBAction func addButtonPressed(sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Enter New Category", message: nil, preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler { (textField) in
-            textField.keyboardType = .Default
-        }
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (_) in
-            if let categoryDesc = alert.textFields?[0].text {
-                if !Category.addNewCategory(categoryDesc) {
-                    alert.message = "Please enter a valid Category"
-                }else {
-                    self.categoryList = Category.getAll()
-                    self.tableView.reloadData()
-                }
+        
+        if categorySelected != nil {
+            let actionSheet = UIAlertController(title: "Add Category/Subcategory", message: nil, preferredStyle: .ActionSheet)
+            actionSheet.addAction(UIAlertAction(title: "Add Main Category", style: .Default, handler: { (_) in
+                //TODO: Add main category
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Add Subcategory to \(categorySelected!.desc)", style: .Default, handler: { (_) in
+                //TODO: Add sub category
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            self.presentViewController(actionSheet, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: "Enter New Category", message: nil, preferredStyle: .Alert)
+            alert.addTextFieldWithConfigurationHandler { (textField) in
+                textField.keyboardType = .Default
             }
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (_) in
+                if let categoryDesc = alert.textFields?[0].text {
+                    if !Category.addNewCategory(categoryDesc) {
+                        alert.message = "Please enter a valid Category"
+                    }else {
+                        self.categoryList = Category.getAll()
+                        self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .Automatic)
+                        self.categorySelected = nil
+                    }
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
 }
