@@ -39,11 +39,11 @@ class AddProductViewController: UITableViewController, ChooseUnitProtocol {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             return 1
@@ -60,7 +60,7 @@ class AddProductViewController: UITableViewController, ChooseUnitProtocol {
 
     // MARK: - Table view delegate
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 0.1 // no header view for "product name" section
         }else {
@@ -105,27 +105,27 @@ class AddProductViewController: UITableViewController, ChooseUnitProtocol {
 
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationViewController = segue.destinationViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination
         
         // Choose Unit
-        if destinationViewController.isKindOfClass(UnitListViewController) {
+        if destinationViewController.isKind(of: UnitListViewController.self) {
             (destinationViewController as! UnitListViewController).delegate = self
         }
     }
     
     
     // MARK: - Product properties methods
-    @IBAction func barcodeButtonPressed(sender: UIButton) {
+    @IBAction func barcodeButtonPressed(_ sender: UIButton) {
         
     }
     
     // MARK: - Choose Protocols
-    func didChooseUnitWithUnit(unit: Unit) {
+    func didChooseUnitWithUnit(_ unit: Unit) {
         self.product?.unit = unit
         self.productUnitLabel.text = unit.desc
-        self.productUnitLabel.textColor = UIColor.blackColor()
-        self.navigationController?.popViewControllerAnimated(true)
+        self.productUnitLabel.textColor = UIColor.black
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

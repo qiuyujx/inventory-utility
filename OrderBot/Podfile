@@ -6,7 +6,7 @@ use_frameworks!
 
 target 'OrderBot' do
 
-pod 'RealmSwift'
+#pod 'RealmSwift'
 
 end
 

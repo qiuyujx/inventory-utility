@@ -35,10 +35,10 @@ class Unit: Object {
         return [Unit]()
     }
     
-    static func addNewUnit(unitDesc: String) -> Bool {
+    static func addNewUnit(_ unitDesc: String) -> Bool {
         do {
             let realm = try Realm()
-            let newUnit = Unit(value: [NSUUID().UUIDString, unitDesc])
+            let newUnit = Unit(value: [UUID().uuidString, unitDesc])
             if realm.objects(Unit.self).filter("desc = '\(unitDesc)'").count > 0 {
                 return false
             }
@@ -52,7 +52,7 @@ class Unit: Object {
         return true
     }
     
-    static func deleteSelf(unit: Unit) -> Bool {
+    static func deleteSelf(_ unit: Unit) -> Bool {
         do {
             let realm = try Realm()
             try realm.write{

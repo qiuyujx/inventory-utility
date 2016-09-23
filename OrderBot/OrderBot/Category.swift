@@ -36,10 +36,10 @@ class Category: Object {
         return [Category]()
     }
     
-    static func addNewCategory(categoryDesc: String) -> Bool {
+    static func addNewCategory(_ categoryDesc: String) -> Bool {
         do {
             let realm = try Realm()
-            let newCategory = Category(value: [NSUUID().UUIDString, categoryDesc, [SubCategory]()])
+            let newCategory = Category(value: [UUID().uuidString, categoryDesc, [SubCategory]()])
             if realm.objects(Category.self).filter("desc = '\(categoryDesc)'").count > 0 {
                 return false
             }
@@ -53,7 +53,7 @@ class Category: Object {
         return true
     }
     
-    static func deleteSelf(category: Category) -> Bool {
+    static func deleteSelf(_ category: Category) -> Bool {
         do {
             let realm = try Realm()
             try realm.write{

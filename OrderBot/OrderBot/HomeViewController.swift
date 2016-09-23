@@ -25,42 +25,42 @@ class HomeViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func productListPressed(sender: UITapGestureRecognizer) {
+    @IBAction func productListPressed(_ sender: UITapGestureRecognizer) {
         print("product list pressed")
     }
 
-    @IBAction func productAddPressed(sender: UITapGestureRecognizer) {
+    @IBAction func productAddPressed(_ sender: UITapGestureRecognizer) {
         print("product add presed")
     }
     
-    @IBAction func supplierListPressed(sender: UITapGestureRecognizer) {
+    @IBAction func supplierListPressed(_ sender: UITapGestureRecognizer) {
         print("supplier list pressed")
     }
     
-    @IBAction func supplierAddPressed(sender: UITapGestureRecognizer) {
+    @IBAction func supplierAddPressed(_ sender: UITapGestureRecognizer) {
         print("supplier add pressed")
     }
     
-    @IBAction func orderListPressed(sender: UITapGestureRecognizer) {
+    @IBAction func orderListPressed(_ sender: UITapGestureRecognizer) {
         print("order list pressed")
     }
     
-    @IBAction func orderAddPressed(sender: UITapGestureRecognizer) {
+    @IBAction func orderAddPressed(_ sender: UITapGestureRecognizer) {
         print("order add pressed")
     }
     
-    @IBAction func newOrderPressed(sender: UITapGestureRecognizer) {
+    @IBAction func newOrderPressed(_ sender: UITapGestureRecognizer) {
         print("new order pressed")
     }
     
-    @IBAction func resumeOrderPressed(sender: UITapGestureRecognizer) {
+    @IBAction func resumeOrderPressed(_ sender: UITapGestureRecognizer) {
         print("resume order pressed")
     }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
 

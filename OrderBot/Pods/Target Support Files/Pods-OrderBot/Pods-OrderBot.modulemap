@@ -1,6 +1,0 @@
-framework module Pods_OrderBot {
-  umbrella header "Pods-OrderBot-umbrella.h"
-
-  export *
-  module * { export * }
-}

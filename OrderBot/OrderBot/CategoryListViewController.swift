@@ -30,17 +30,17 @@ class CategoryListViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryList.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: CategoryTableViewCell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath) as! CategoryTableViewCell
-        let category = categoryList[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: CategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryTableViewCell
+        let category = categoryList[(indexPath as NSIndexPath).row]
         cell.categoryLabel.text = category.desc
         if category.id == categorySelected?.id {
             cell.radioImageView.image = UIImage(named: "radioSelected")
@@ -52,29 +52,29 @@ class CategoryListViewController: UITableViewController {
     }
 
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
 
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            if Category.deleteSelf(categoryList[indexPath.row]) {
+            if Category.deleteSelf(categoryList[(indexPath as NSIndexPath).row]) {
                 categoryList = Category.getAll()
                 // Delete the row from table view
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                tableView.deleteRows(at: [indexPath], with: .fade)
             }else {
-                let alert = UIAlertController(title: "Error", message: "Failed to delete, please try again", preferredStyle: .Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                let alert = UIAlertController(title: "Error", message: "Failed to delete, please try again", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
     
     // MARK: - Table view delegate
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.categorySelected = categoryList[indexPath.row]
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.categorySelected = categoryList[(indexPath as NSIndexPath).row]
     }
 
     /*
@@ -88,36 +88,41 @@ class CategoryListViewController: UITableViewController {
     */
     
     // MARK: - Button Methods
-    @IBAction func addButtonPressed(sender: UIBarButtonItem) {
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         if categorySelected != nil {
-            let actionSheet = UIAlertController(title: "Add Category/Subcategory", message: nil, preferredStyle: .ActionSheet)
-            actionSheet.addAction(UIAlertAction(title: "Add Main Category", style: .Default, handler: { (_) in
-                //TODO: Add main category
+            let actionSheet = UIAlertController(title: "Add Category/Subcategory", message: nil, preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "Add Main Category", style: .default, handler: { (_) in
+                self.addMainCategory()
             }))
-            actionSheet.addAction(UIAlertAction(title: "Add Subcategory to \(categorySelected!.desc)", style: .Default, handler: { (_) in
+            actionSheet.addAction(UIAlertAction(title: "Add Subcategory to \(categorySelected!.desc)", style: .default, handler: { (_) in
                 //TODO: Add sub category
+                
             }))
-            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            self.presentViewController(actionSheet, animated: true, completion: nil)
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(actionSheet, animated: true, completion: nil)
         }else{
-            let alert = UIAlertController(title: "Enter New Category", message: nil, preferredStyle: .Alert)
-            alert.addTextFieldWithConfigurationHandler { (textField) in
-                textField.keyboardType = .Default
-            }
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (_) in
-                if let categoryDesc = alert.textFields?[0].text {
-                    if !Category.addNewCategory(categoryDesc) {
-                        alert.message = "Please enter a valid Category"
-                    }else {
-                        self.categoryList = Category.getAll()
-                        self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .Automatic)
-                        self.categorySelected = nil
-                    }
-                }
-            }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            addMainCategory()
         }
+    }
+    
+    func addMainCategory() -> Void {
+        let alert = UIAlertController(title: "Enter New Category", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.keyboardType = .default
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            if let categoryDesc = alert.textFields?[0].text {
+                if !Category.addNewCategory(categoryDesc) {
+                    alert.message = "Please enter a valid Category"
+                }else {
+                    self.categoryList = Category.getAll()
+                    self.tableView.reloadSections(IndexSet.init(integer: 0), with: .automatic)
+                    self.categorySelected = nil
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

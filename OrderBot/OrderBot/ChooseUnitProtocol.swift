@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ChooseUnitProtocol {
-    func didChooseUnitWithUnit(unit: Unit) -> Void
+    func didChooseUnitWithUnit(_ unit: Unit) -> Void
 }
