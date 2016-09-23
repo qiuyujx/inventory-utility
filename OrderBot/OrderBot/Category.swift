@@ -28,7 +28,7 @@ class Category: Object {
     static func getAll() -> [Category]! {
         do {
             let realm = try Realm()
-            let categoryList = realm.objects(Category).toArray()
+            let categoryList = realm.objects(Category.self).toArray()
             return categoryList
         }catch {
             print(error)

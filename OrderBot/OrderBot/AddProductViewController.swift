@@ -125,7 +125,7 @@ class AddProductViewController: UITableViewController, ChooseUnitProtocol {
         self.product?.unit = unit
         self.productUnitLabel.text = unit.desc
         self.productUnitLabel.textColor = UIColor.black
-        self.navigationController?.popViewController(animated: true)
+        let _ = self.navigationController?.popViewController(animated: true)
     }
 
 }

@@ -27,7 +27,7 @@ class Unit: Object {
     static func getAll() -> [Unit]! {
         do {
             let realm = try Realm()
-            let unitList = realm.objects(Unit).toArray()
+            let unitList = realm.objects(Unit.self).toArray()
             return unitList
         }catch {
             print(error)
